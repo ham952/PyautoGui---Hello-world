@@ -27,8 +27,8 @@ Read csv file (using pandas) and write in a new csv file using PyAutoGUI
 
 ## Known Issues
 
-1. PyAutoGUI unable to locate excel-icon.
+1. PyAutoGUI unable to locate excel-icon.PNG
 
-        To localize the icon PyAutoGUI uses open pythons Pillow library. The accuracy of excel icon screen shot detection is 
-        quite low. In case of no detection by PIL, make a fresh screen shot of excel file icon in the "windows task bar" and 
-        replace it with the excel-icon.PNG file in folder 
+        To localize the icon PyAutoGUI uses open pythons Pillow library. The accuracy of excel icon screen shot 
+	detection is quite low. In case of no detection by PIL, make a fresh screen shot of excel file icon in 
+	the "windows task bar" and replace it with the excel-icon.PNG file in folder 
