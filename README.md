@@ -30,15 +30,15 @@ Read csv file (using pandas) and write in a new csv file using PyAutoGUI
 
 1. To run using python script 
 	
-	python myBot.py
+		python myBot.py
 
 2. To make standalone app
 	
-	pyinstaller --onefile --add-data="disaster_names.csv;." --add-data="excel-icon.PNG;." myBot.py
+		pyinstaller --onefile --add-data="disaster_names.csv;." --add-data="excel-icon.PNG;." myBot.py
 
 3. To make standalone app with CLI based debugging
 
-	pyinstaller --onefile -w --add-data="disaster_names.csv;." --add-data="excel-icon.PNG;." myBot.py
+		pyinstaller --onefile -w --add-data="disaster_names.csv;." --add-data="excel-icon.PNG;." myBot.py
 
 ## Known Issues
 
