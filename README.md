@@ -5,6 +5,7 @@ Read csv file (using pandas) and write in a new csv file using PyAutoGUI
 ## Requirements
 1. pyAutoGUI
 2. pandas
+3. pyIstaller
 
 ## Pre - requisites
 
@@ -24,6 +25,20 @@ Read csv file (using pandas) and write in a new csv file using PyAutoGUI
        f. write data in y-axis from pandas frame                               
   4. use pyauto gui to save csv file                                          
        a. Use Hotkeys to save file 
+
+## Repeating process
+
+1. To run using python script 
+	
+	python myBot.py
+
+2. To make standalone app
+	
+	pyinstaller --onefile --add-data="disaster_names.csv;." --add-data="excel-icon.PNG;." myBot.py
+
+3. To make standalone app with CLI based debugging
+
+	pyinstaller --onefile -w --add-data="disaster_names.csv;." --add-data="excel-icon.PNG;." myBot.py
 
 ## Known Issues
 

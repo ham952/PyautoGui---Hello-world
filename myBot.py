@@ -49,6 +49,11 @@ def click_and_write(loc,data):
     pyautogui.typewrite(str(data))
     pyautogui.hotkey('tab')
 
+def resource_path(relative_path):
+    """ Get absolute path to resource, works for dev and for PyInstaller """
+    base_path = getattr(sys, '_MEIPASS', os.path.dirname(os.path.abspath(__file__)))
+
+    return os.path.join(base_path, relative_path)
 
 def main(args):
 
@@ -58,7 +63,9 @@ def main(args):
     if ans == 'OK' :
 
         # read data file
-        data_file = path.join(args.input_dir, args.file_name)
+        data_file_tmp = path.join(args.input_dir, args.file_name)
+        # converting relative path to absolute path for PyIstaller
+        data_file = resource_path(data_file_tmp)
 
         if DEBUGGING :
             print (data_file)
@@ -71,8 +78,13 @@ def main(args):
         # Minimize all windows
         minimize_windows()
         
-        # Locate excel file 
-        x,y = find_icon(args.input_dir + 'excel-icon.PNG')
+        # Locate excel file
+        icon_path_tmp = args.input_dir + 'excel-icon.PNG'
+        # converting relative path to absolute path for PyIstaller
+        icon_path = resource_path(icon_path_tmp)
+        x,y = find_icon(icon_path)
+
+        
         # Open excel window
         pyautogui.click(x, y, button = 'left')
         # Maximize window
